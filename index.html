@@ -1,1 +1,374 @@
-HELLO_TEST_PASTE
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Columbia CS — Trustworthy AI</title>
+  <meta name="description" content="Columbia Computer Science's Trustworthy AI initiative: building AI that is safe, secure, measurable, purpose-driven, and interpretable." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --columbia-blue: #1d4f91;
+      --columbia-blue-dark: #0a2d5c;
+      --columbia-blue-light: #b9d9eb;
+      --ink: #0f172a;
+      --muted: #475569;
+      --bg: #fbfaf7;
+      --panel: #ffffff;
+      --border: #e5e7eb;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--columbia-blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+    /* Header */
+    header.site {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      background: var(--panel);
+    }
+    header.site .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 600;
+      color: var(--columbia-blue-dark);
+      letter-spacing: 0.2px;
+    }
+    .brand-mark {
+      width: 32px; height: 32px;
+      border-radius: 6px;
+      background: var(--columbia-blue);
+      color: #fff;
+      display: grid; place-items: center;
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 700;
+      font-size: 16px;
+    }
+    nav.top a { margin-left: 22px; color: var(--ink); font-size: 15px; }
+    nav.top a:hover { color: var(--columbia-blue); }
+
+    /* Hero */
+    .hero {
+      padding: 96px 0 72px;
+      background:
+        radial-gradient(1200px 400px at 80% -10%, rgba(185,217,235,0.5), transparent 60%),
+        linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    .eyebrow {
+      display: inline-block;
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--columbia-blue);
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+    h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 600;
+      font-size: clamp(40px, 6vw, 68px);
+      line-height: 1.05;
+      margin: 0 0 20px;
+      color: var(--columbia-blue-dark);
+      letter-spacing: -0.01em;
+    }
+    h1 em { font-style: italic; color: var(--columbia-blue); }
+    .lede {
+      font-size: clamp(18px, 1.6vw, 21px);
+      color: var(--muted);
+      max-width: 720px;
+      margin: 0 0 32px;
+    }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      background: var(--columbia-blue);
+      color: #fff;
+      font-weight: 600;
+      font-size: 15px;
+      border: 1px solid var(--columbia-blue-dark);
+      transition: transform 0.05s ease, background 0.15s ease;
+    }
+    .cta:hover { background: var(--columbia-blue-dark); text-decoration: none; }
+    .cta.secondary {
+      background: transparent;
+      color: var(--columbia-blue);
+      border-color: var(--columbia-blue);
+      margin-left: 12px;
+    }
+    .cta.secondary:hover { background: var(--columbia-blue-light); }
+
+    /* Sections */
+    section { padding: 80px 0; }
+    section h2 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(28px, 3.2vw, 38px);
+      margin: 0 0 16px;
+      color: var(--columbia-blue-dark);
+      font-weight: 600;
+      letter-spacing: -0.005em;
+    }
+    section .section-lede {
+      color: var(--muted);
+      max-width: 720px;
+      margin: 0 0 40px;
+      font-size: 17px;
+    }
+
+    /* Pillars */
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .pillar {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      transition: border-color 0.15s ease, transform 0.15s ease;
+    }
+    .pillar:hover {
+      border-color: var(--columbia-blue);
+      transform: translateY(-2px);
+    }
+    .pillar .num {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 14px;
+      color: var(--columbia-blue);
+      letter-spacing: 0.12em;
+      font-weight: 600;
+    }
+    .pillar h3 {
+      margin: 8px 0 10px;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 22px;
+      color: var(--columbia-blue-dark);
+      font-weight: 600;
+    }
+    .pillar p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* Faculty */
+    .faculty-band {
+      background: linear-gradient(180deg, #ffffff, #f4f7fb);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .faculty-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .faculty-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 20px;
+    }
+    .faculty-card .name {
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .faculty-card .area {
+      font-size: 14px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .faculty-note {
+      margin-top: 24px;
+      font-size: 14px;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* Contact */
+    .contact {
+      background: var(--columbia-blue-dark);
+      color: #fff;
+    }
+    .contact h2 { color: #fff; }
+    .contact .section-lede { color: rgba(255,255,255,0.82); }
+    .contact a { color: var(--columbia-blue-light); }
+    .contact .cta {
+      background: #fff;
+      color: var(--columbia-blue-dark);
+      border-color: #fff;
+    }
+    .contact .cta:hover { background: var(--columbia-blue-light); }
+
+    /* Footer */
+    footer.site {
+      padding: 32px 0;
+      font-size: 14px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      background: var(--panel);
+    }
+    footer.site .wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    @media (max-width: 640px) {
+      nav.top a { margin-left: 14px; font-size: 14px; }
+      .hero { padding: 64px 0 48px; }
+      section { padding: 56px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <div class="brand">
+        <div class="brand-mark">C</div>
+        <div>Columbia CS &middot; Trustworthy AI</div>
+      </div>
+      <nav class="top">
+        <a href="#pillars">Pillars</a>
+        <a href="#faculty">Faculty</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Columbia University &middot; Department of Computer Science</div>
+      <h1>Building AI that is <em>trustworthy</em> by design.</h1>
+      <p class="lede">
+        A Columbia CS initiative to advance artificial intelligence that is
+        safe, secure, measurable, purpose-driven, and interpretable &mdash;
+        grounded in rigorous research and translated into real-world practice.
+      </p>
+      <a class="cta" href="#pillars">Our five pillars &rarr;</a>
+      <a class="cta secondary" href="#contact">Get in touch</a>
+    </div>
+  </section>
+
+  <section id="pillars">
+    <div class="wrap">
+      <h2>Five pillars of trustworthy AI</h2>
+      <p class="section-lede">
+        Our faculty's research spans the foundations and systems that make modern
+        AI dependable in the settings where it matters most.
+      </p>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="num">01</div>
+          <h3>Safe</h3>
+          <p>Models that behave reliably under distribution shift, adversarial pressure, and real-world deployment.</p>
+        </div>
+        <div class="pillar">
+          <div class="num">02</div>
+          <h3>Secure</h3>
+          <p>Defenses against prompt injection, data poisoning, and supply-chain attacks on AI systems.</p>
+        </div>
+        <div class="pillar">
+          <div class="num">03</div>
+          <h3>Measurable</h3>
+          <p>Benchmarks, audits, and evaluation methods that turn abstract claims about AI into quantifiable evidence.</p>
+        </div>
+        <div class="pillar">
+          <div class="num">04</div>
+          <h3>Purpose-driven</h3>
+          <p>AI systems designed to serve specific human and scientific goals &mdash; not capability for its own sake.</p>
+        </div>
+        <div class="pillar">
+          <div class="num">05</div>
+          <h3>Interpretable</h3>
+          <p>Models whose decisions can be inspected, explained, and challenged by the people they affect.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faculty" class="faculty-band">
+    <div class="wrap">
+      <h2>Faculty &amp; collaborators</h2>
+      <p class="section-lede">
+        A growing group of Columbia CS faculty contributing to the initiative across
+        safety, security, causality, systems, and human-centered AI.
+      </p>
+      <div class="faculty-grid">
+        <div class="faculty-card">
+          <div class="name">Baishakhi Ray</div>
+          <div class="area">AI for software &amp; reliability</div>
+        </div>
+        <div class="faculty-card">
+          <div class="name">Zhou Yu</div>
+          <div class="area">Conversational &amp; human-centered AI</div>
+        </div>
+        <div class="faculty-card">
+          <div class="name">Eugene Wu</div>
+          <div class="area">Data systems &amp; AI tooling</div>
+        </div>
+        <div class="faculty-card">
+          <div class="name">Zhuo Zhang</div>
+          <div class="area">AI for cybersecurity</div>
+        </div>
+        <div class="faculty-card">
+          <div class="name">Elias Bareinboim</div>
+          <div class="area">Causality &amp; causal inference</div>
+        </div>
+        <div class="faculty-card">
+          <div class="name">Suman Jana</div>
+          <div class="area">Systems security</div>
+        </div>
+      </div>
+      <p class="faculty-note">Additional faculty to be added as the initiative grows.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Get in touch</h2>
+      <p class="section-lede">
+        For press inquiries, collaboration, or to learn more about the initiative,
+        please reach out.
+      </p>
+      <a class="cta" href="mailto:trustworthy-ai@cs.columbia.edu">Contact us</a>
+    </div>
+  </section>
+
+  <footer class="site">
+    <div class="wrap">
+      <div>&copy; <span id="yr"></span> Columbia University &middot; Department of Computer Science</div>
+      <div>
+        <a href="https://www.cs.columbia.edu" target="_blank" rel="noopener">cs.columbia.edu</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
